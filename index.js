@@ -1,9 +1,15 @@
+// const { createElement } = require("react")
+
 let btndark = document.querySelector("#btndark")
 let btnlight = document.querySelector("#btnlight")
 let btnclassic = document.querySelector("#btnclassic")
+let sidebar = document.querySelector("aside")
+let list = document.querySelector("#list")
+let hamburgerbtn = document.querySelector("#hamburgerbtn")
 
 btndark.addEventListener("click", function () {
     document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1510936111840-65e151ad71bb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1190')"
+    
 })
 btnlight.addEventListener("click", function () {
     document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170')"
@@ -16,8 +22,14 @@ let text = document.querySelector("#textarea")
 
 let btnsave = document.querySelector("#btnsave")
 btnsave.addEventListener("click", function () {
+
     localStorage.setItem("titleval", title.value)
     localStorage.setItem("textarea", text.value)
+})
+btnsave.addEventListener("click",function(){
+    let saveli = document.createElement("li");
+    saveli.textContent = title.value;
+    list.appendChild(saveli);
 })
 window.addEventListener("load", function(){
     let savedtitle = localStorage.getItem("titleval")
@@ -53,3 +65,14 @@ window.addEventListener("mouseover",function(){
 window.addEventListener("mouseover",function(){
     btnsave.style.fontSize = "initial"
 })
+
+hamburgerbtn.addEventListener("click", ()=>{
+    if (sidebar.style.display == "none"){
+        sidebar.style.display = "initial"
+    }
+    else{
+        sidebar.style.display = "none"
+    }
+
+}); 
+
