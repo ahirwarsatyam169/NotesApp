@@ -28,6 +28,7 @@ ul{
     background-color: transparent;
     height: 50px;
     width: auto;
+    list-style: none;
 }
 
 button{
@@ -147,3 +148,4 @@ nav{
     justify-content:space-around;
     margin: 20px;
 }
+
